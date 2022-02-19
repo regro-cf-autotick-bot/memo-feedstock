@@ -1,5 +1,5 @@
 {% set name = "memo" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/memo-{{ version }}.tar.gz
-  sha256: 73555eebaf82d53618a0faf015d475d352b3a2719adbce4eb19bf599f03e9e41
+  sha256: a167c7ffe7688521c13306dad4954f9e7dfe3a4ad9388ebea17b1286fe9e57c8
 
 build:
   number: 0
