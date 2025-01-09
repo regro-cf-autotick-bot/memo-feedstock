@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/memo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/memo-{{ version }}.tar.gz
   sha256: 73555eebaf82d53618a0faf015d475d352b3a2719adbce4eb19bf599f03e9e41
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - joblib >=1.0.1
     - orjson >=3.4.5
-    - python >=3.7
+    - python >={{ python_min }}
     - rich >=9.2.0
 
 test:
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/koaning/memo
